@@ -2,8 +2,10 @@ name: CI/CD
 
 on:
   push:
-    branches:
-      - dev
+    branches: [ "main", "dev" ]
+  pull_request:
+    branches: [ "main", "dev" ]
+
 
 jobs:
   build-and-deploy:
@@ -17,6 +19,7 @@ jobs:
         uses: actions/setup-java@v2
         with:
           java-version: '17'
+          distribution: 'temurin'
 
       - name: Build and package
         run: mvn clean package -DskipTests
