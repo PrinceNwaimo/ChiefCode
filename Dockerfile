@@ -3,8 +3,10 @@ COPY . .
 RUN mvn -B clean package -DskipTests
 
 FROM openjdk:17
-COPY --from=build web/target/*.jar chiefcode.jar
+COPY --from=build target/*.jar app.jar
 
-ENV SPRING_PROFILES_ACTIVE=${PROFILE}
+# Set a default value for the PROFILE environment variable
+ENV PROFILE=dev
+ENV PORT=8080
 
-ENTRYPOINT ["java", "-jar", "-Dserver.port=8080", "chiefcode.jar"]
+ENTRYPOINT ["java", "-jar", "-Dserver.port=${PORT}", "-Dspring.profiles.active=${PROFILE}", "app.jar"]
