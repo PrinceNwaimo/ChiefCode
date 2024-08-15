@@ -32,18 +32,18 @@ jobs:
 
       - name: Build Docker image
         run: |
-          docker build -t your-dockerhub-username/your-app:latest .
+          docker build -t your-dockerhub-kingaby/chief-code:latest .
 
       - name: Push Docker image to Docker Hub
         run: |
-          docker push your-dockerhub-username/your-app:latest
+          docker push your-dockerhub-kingaby/chief-code:latest
 
       - name: Deploy and run Docker container
         run: |
-          docker run -d --name your-app-container \
+          docker run -d --chief-code-container \
           -e DB_HOST=${{ secrets.DB_HOST }} \
           -e DB_PORT=${{ secrets.DB_PORT }} \
           -e DB_NAME=${{ secrets.DB_NAME }} \
           -e DB_USER=${{ secrets.DB_USER }} \
           -e DB_PASSWORD=${{ secrets.DB_PASSWORD }} \
-          -p 8080:8080 your-dockerhub-username/your-app:latest
+          -p 8080:8080 your-dockerhub-kingaby/chief-code:latest
