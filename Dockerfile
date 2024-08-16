@@ -10,3 +10,4 @@ COPY --from=build target/*.jar chiefcode.jar
 ENV SPRING_PROFILES_ACTIVE=${PROFILE}
 
 ENTRYPOINT ["java", "-jar", "-Dserver.port=8080", "chiefcode.jar"]
+
