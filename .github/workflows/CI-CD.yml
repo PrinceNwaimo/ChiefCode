@@ -52,3 +52,6 @@ jobs:
           -e DB_PASSWORD=${{ secrets.DB_PASSWORD }} \
           -p 8080:8080 kingaby/chief-code:latest
 
+      - name: Deploy Docker Compose
+        run: |
+          docker-compose -f docker-compose.yml up -d
