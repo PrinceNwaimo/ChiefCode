@@ -1,0 +1,4 @@
+server:
+  port: 8082
+datasource:
+  url: jdbc:postgresql://localhost:5432/systest_db

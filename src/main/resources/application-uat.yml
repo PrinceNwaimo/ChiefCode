@@ -1,0 +1,4 @@
+server:
+  port: 8083
+datasource:
+  url: jdbc:postgresql://localhost:5432/uat_db
