@@ -1,11 +1,12 @@
-version: '3'
 services:
   app:
-    build: ../path/to/Dockerfile  # Adjust the path as needed
+    build:
+      context: /home/ubuntu/Downloads/ChiefCode/ChiefCode
+      dockerfile: Dockerfile  # This line is optional if your Dockerfile is named 'Dockerfile'
     environment:
       - SPRING_PROFILES_ACTIVE=uat
     env_file:
-      - ../config/uat.env
+      - /home/ubuntu/Downloads/ChiefCode/ChiefCode/config/uat.env
     ports:
-      - "8080:8080"
+      - "8200:8080"
 

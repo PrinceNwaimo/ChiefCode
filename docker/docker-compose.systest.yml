@@ -1,10 +1,12 @@
-version: '3'
 services:
   app:
-    build: ../path/to/Dockerfile  # Adjust the path as needed
+    build:
+      context: /home/ubuntu/Downloads/ChiefCode/ChiefCode
+      dockerfile: Dockerfile  # This line is optional if your Dockerfile is named 'Dockerfile'
     environment:
       - SPRING_PROFILES_ACTIVE=systest
     env_file:
-      - ../config/systest.env
+      - /home/ubuntu/Downloads/ChiefCode/ChiefCode/config/systest.env
     ports:
-      - "8080:8080"
+      - "8000:8080"
+
