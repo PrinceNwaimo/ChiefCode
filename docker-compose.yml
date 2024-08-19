@@ -39,7 +39,7 @@ services:
       - DB_USER=${DB_USER}
       - DB_PASSWORD=${DB_PASSWORD}
     ports:
-      - "8801:8080"  # First instance
+      - "8005:8080"  # First instance
 
     depends_on:
       - elasticsearch
