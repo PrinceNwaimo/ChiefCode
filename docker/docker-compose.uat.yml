@@ -2,7 +2,7 @@ services:
   app:
     build:
       context: /home/ubuntu/Downloads/ChiefCode/ChiefCode
-      dockerfile: Dockerfile  # This line is optional if your Dockerfile is named 'Dockerfile'
+      dockerfile: Dockerfile
     environment:
       - SPRING_PROFILES_ACTIVE=uat
     env_file:
