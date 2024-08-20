@@ -39,7 +39,7 @@ services:
       - DB_USER=${DB_USER}
       - DB_PASSWORD=${DB_PASSWORD}
     ports:
-      - "8000:8080"
+      - "7000:8080"
 
     depends_on:
       - elasticsearch
